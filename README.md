@@ -2,8 +2,8 @@
 
 
 Document managment system 
-   - dicument version control
+   - document version control
    - document sharing
-   - directery system to sore files in folder
+   - directery system to store files in folder
   
   
