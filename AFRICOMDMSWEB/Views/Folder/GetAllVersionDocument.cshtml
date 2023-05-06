@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DocumentVersions> 
+
+<partial name="sidebbar" />
+<div class="home-section">
+
+	<div class="contain">
+		<div class="cont-Detail">
+				 <table class="table border table-striped table-sm">
+            <thead>
+                <tr> 
+                    <th>#</th>
+                    <th>UpdatedBY</th>
+                    <th>Updated At</th>
+                    <th>Version</th>
+                    <th>View</th>
+                    <th>Downloaded</th>
+                </tr>
+            </thead>
+            <tbody>
+               @* @if (Model.Count() > 0)
+                {*@
+                    @{
+                        int count = 0;
+                    }
+
+                    @foreach (var item in Model)
+                    {
+                        count = count + 1;
+                        <tr>
+                            <td>@count</td>
+                            <td class="w-30">@item.ApplicationUser.Name</td>
+                            <td>@item.UpdatedAt</td>
+                            <td>DMS_@item.Versions</td>
+                                 <td>
+                                    <a asp-route-id="@item.VersionsId" class="btn btn-primary pl-1" asp-action="DownloadDocV">Downloadfile</a>
+                                </td>
+                                <td>
+                                <a target="_blank" class="btn btn-primary" href="https://localhost:44397/@item.DocumentVersionUrl">View file</a>
+                                </td>
+                                @*<td>
+                                    <a asp-action="UpdateFileVersion" asp-route-id="@item.DocumentId" class="btn btn-info">
+                                        updateV
+                                   </a>
+                                </td>*@
+                        </tr>
+                    }
+                @*}
+                else
+                {
+                    <tr><td colspan="4"> empty</td></tr>
+                }*@
+            </tbody>
+        </table>
+		</div>
+	</div>
+	
+</div>
+
+

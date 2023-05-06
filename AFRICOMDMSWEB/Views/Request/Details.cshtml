@@ -1,0 +1,81 @@
+﻿@using AFRICOMDMSWEB.Data
+@using AFRICOMDMSWEB.Models.ViewModel
+@using System.Security.Claims
+@model RequestViewModel
+@inject AppDbContext _db;
+@{
+    var from = _db.ApplicationUsers.FirstOrDefault(a => a.Id == Model.Requests.RequesterId);
+    var fromRole = _db.Roles.FirstOrDefault(r => r.Id == _db.UserRoles.FirstOrDefault(u => u.UserId == Model.Requests.RequesterId).RoleId).Name;
+    string passName = "";
+    string passid = "";
+    var rolePass = "";
+    if (Model.RequestIpassToHigherLevel.Count() > 0)
+    {
+        foreach (var ite in Model.RequestIpassToHigherLevel)
+        {
+            passName = ite.ActionTaker.Name;
+            passid = ite.ActionTakerId;
+        }
+        rolePass = _db.Roles.FirstOrDefault(r => r.Id == _db.UserRoles.FirstOrDefault(u => u.UserId == passid).RoleId).Name;
+
+    }
+
+    
+}
+<partial name="sidebbar"/>
+    <div class="home-section">
+        <div class="contain">
+            <div class="cont">
+                <div class="row">
+                   <div class="Req-Ac">
+                       <h5 class="text-center">Requist Information</h5>
+                    <div class="">
+                        <p>Title: @Model.Requests.Title</p>
+                        <p>Description: @Model.Requests.Description</p>
+                        <p>From: @from.Name -> @fromRole<span> At @Model.Requests.RequestDate </span></p>
+                    </div>
+                         <div>
+                            <a asp-action="DownloadReq" asp-controller="Request" asp-route-id="@Model.RequestFiles.RequestFileId" class="btn btn-primary">
+                                <span>@Model.RequestFiles.RequestFileName <i class="bi bi-arrow-down"></i></span>
+                            </a>
+                            <span> <a href="@Model.RequestFiles.RequestFileUrl" target="_blank" class="btn btn-info">View</a> </span>
+                         </div>   
+                    </div>
+                  </div>
+                @if(Model.ActionUserTaken.Count()> 0){
+                    <div class="text-center">
+                        <h7 class="text-center">Action You Taken before</h7>
+                    </div>
+                    @foreach(var item in Model.ActionUserTaken){
+                    <div class="Req-Ac">
+                            <p>Message : @item.MessageForRequester</p>
+                        @if (item.Actions.Name == "Pass to Another Person")
+                        {
+                          <p>passto : @passName -> @rolePass</p>
+
+                           <a asp-action="RequestAnswers" asp-controller="Request" asp-route-id="@Model.Requests.RedId" class="btn btn-primary">View Answers</a>
+
+                        }else{
+                            <p>@item.Actions.Name</p>
+                        }
+                        <small class="text-end">at @item.ActionTakeDate</small>
+                    </div>
+                    }
+                }
+                <div>
+                    @if(Model.Comments.Count() > 0){
+                        <p>Comments about this Requiest</p>
+                        foreach(var com in Model.Comments){
+                        <div class="Req-Ac req-form-flex">
+                               <p class="my-2 p-2">From @com.Sender.Name  </p>
+                                <p class="p-2">@com.Comment</p>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="mt-2">
+                    <a asp-action="TakeAction" asp-controller="Request" asp-route-id="@Model.Requests.RedId" class="btn btn-primary">Take Action</a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,110 @@
+﻿@using AFRICOMDMSWEB.Data
+@using AFRICOMDMSWEB.Models.ViewModel 
+@model RequestActionViewModel
+@inject AppDbContext _db;
+@{
+    var from = _db.ApplicationUsers.FirstOrDefault(a => a.Id == Model.request.RequesterId);
+    var fromRole = _db.Roles.FirstOrDefault(r => r.Id == _db.UserRoles.FirstOrDefault(u => u.UserId == Model.request.RequesterId).RoleId).Name;
+}
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+            <div class="row">
+                <form asp-action="TakeAction" enctype="multipart/form-data">
+                    <input asp-for="RequestID" hidden />
+                    <input asp-for="requestAction.CurrentStateId" hidden />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="row">
+                                <div class="form-group p-2 col-6">
+                                    <label asp-for="requestAction.MessageForRequester"></label>
+                                    <textarea class="form-control" rows="3" asp-for="requestAction.MessageForRequester"></textarea>
+                                </div>
+                          
+							 <div class="form-group p-2 col-6" >
+								<label asp-for="requestAction.ActionId"></label>
+								<select asp-for="requestAction.ActionId" asp-items="@Model.ActionsType" class="form-control">
+									<option disabled selected>--Select Action--</option>
+								</select>
+                              </div>
+                        </div>
+                       
+                        <div class="container row" id="transiton" style="display:none; border: 0.2px,solid, grey; box-shadow:0.2 0.3 0.5 black">
+                           <div class="form-group">
+                              <input type="checkbox" asp-for="writeComent" onclick="checkme()" id="check" class="checkbox" />
+                               <label>Want to Write A Comment</label>
+                           </div>
+
+                           <div id="comment" style="display:none">
+                            <div class="form-group p-2 col-6">
+                                <label asp-for="reqComment.Comment"></label>
+                                <textarea class="form-control" rows="3" asp-for="reqComment.Comment"></textarea>
+                            </div>
+                           </div>
+                        </div>
+
+                        <div id="Ans" style="display:none">
+                        <div class="form-group">
+                            <input type="checkbox" asp-for="isfileAttach" onclick="checkmeAns()" id="checkAns" class="checkbox" />
+                            <label>Want to attach File</label>
+                        </div>
+                        <div class="form-group" id="ansfile" style="display:none">
+                            <div class="col-md-10">
+                                <p>Upload file</p>
+                                <input class="form-control" name="FormFile" type="file" />
+                            </div>
+                        </div>
+                        </div>
+                      
+                        <div class="form-group col-3 p-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                     
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+	<script>
+        function checkme(){
+            var check = document.getElementById("check")
+            var tran = document.getElementById("comment")
+            if(check.checked == true){
+                tran.style.display = "block"
+                console.log("hello")
+            }else{
+                tran.style.display = "none"
+            }
+        }
+	function checkmeAns(){
+            var check = document.getElementById("checkAns")
+            var tran = document.getElementById("ansfile")
+               if(check.checked == true){
+                tran.style.display = "block"
+                console.log("hello")
+            }else{
+                tran.style.display = "none"
+            }
+    }
+	
+        $(document).ready(function () {
+            $('#requestAction_ActionId').change(function () {
+                var selection = $('#requestAction_ActionId Option:Selected').text()
+                if (selection != 'Pass to Another Person') {
+                    $('#transiton').hide()
+                    $("#Ans").show()
+                } else {
+                    $('#transiton').show()
+                    $("#Ans").hide()
+                }
+              
+
+            })
+
+        })
+    </script>
+    @{
+    <partial name= "_ValidationScriptsPartial" />
+    }
+}

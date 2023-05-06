@@ -1,0 +1,53 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model Document
+@inject IHttpContextAccessor context
+
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+            <form method="post" enctype="multipart/form-data" asp-action="Edit">
+                <div>
+                    <p>Create File</p>
+                    <hr />
+                </div>
+                <div>
+                    @*<p>Currentpath:  <strong>@Model.path\</strong></p>*@
+                </div>
+                <div class="row">
+                    <div class="text-danger" asp-validation-summary="All"></div>
+
+                    <div class="form-group col-6 pb-3">
+                        <div class="">
+                            <label asp-for="DocumentTitle"></label>
+                            <input class="form-control" asp-for="DocumentTitle" />
+                        </div>
+                    </div>
+                    <div class="form-group col-6 pb-3">
+                        <div class="">
+                            <label asp-for="Tag"></label>
+                            <input class="form-control" asp-for="Tag" />
+                        </div>
+                    </div>
+                    <div class="form-group col-6 pb-3">
+                        <div class="">
+                            <p>Upload file</p>
+                            <input class="form-control" name="FormFile" type="file" />
+                        </div>
+                    </div>
+                    <div class="form-group col-6 pb-3">
+                        <div class="">
+                            <label asp-for="Description"></label>
+                            <textarea class="form-control" asp-for="Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-md-10">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

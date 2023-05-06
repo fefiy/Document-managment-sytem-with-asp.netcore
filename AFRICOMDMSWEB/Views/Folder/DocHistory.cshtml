@@ -1,0 +1,49 @@
+﻿@*<table class="table border table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>
+                DocumentName
+            </th>
+            <th>
+                Versions
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.documents.Count() > 0)
+        {
+            int count = 0;
+
+            @foreach (var item in Model.documents)
+            {
+                count = count + 1;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.DocumentContentName</td>
+                    <td>DMS_@item.Version</td>
+                    <td>
+                        <div class="text-center">
+                            <form asp-action="Delete" asp-route-id="@item.DocumentId">
+                                <a asp-route-id="@item.DocumentId" class="btn btn-primary pl-1" asp-action="DownloadImage">Downloadfile</a>
+                                <a class="btn btn-primary" asp-action="ShareProduct" data-toggle="modal" asp-route-id="@item.DocumentId"><i class="bi bi-share-fill"></i></a>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+                                <a class="btn btn-primary" asp-action="UpdateFileVersion" data-toggle="modal" asp-route-id="@item.DocumentId">Update</a>
+                                <a target="_blank" class="btn btn-primary" href="@item.DocumentUrl">View file</a>
+                                @*<a asp-controller="Folder" asp-action="GetAllVersionDocument" asp-route-id="@item.DocumentId">GetAllVersions</a>*@
+                                @*<a asp-controller="Folder" asp-action="Detail" asp-route-id="@item.DocumentId">GetAllVersions</a>*@
+@*                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="4"> empty</td></tr>
+        }
+    </tbody>
+</table>*@

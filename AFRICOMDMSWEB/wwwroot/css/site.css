@@ -1,0 +1,92 @@
+
+.cont {
+    width: 90%;
+    margin: 2% auto;
+    background-color: ghostwhite;
+}
+
+.contain {
+    width: 94%;
+    margin: 0 auto;
+    background-color: ghostwhite;
+    border: solid 10px white;
+}
+
+.cont-Detail {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.flexx {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 7px 10px;
+    margin: 1px 8%;
+}
+
+.confor-box {
+    width: 45%;
+    margin: 14% auto;
+    border: solid 0.2px grey;
+    border-radius: 4px;
+    padding: 3%;
+    box-shadow: 0 0.5px 0.7px grey;
+}
+
+.Req-Ac {
+    border: solid 0.2px grey;
+    padding: 4px 7px;
+    margin: 5px 2px;
+}
+
+.about-Ac {
+    display: felx;
+    flex-direction: row;
+    justify-content: end;
+    align-content: center;
+}
+
+.arrow {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/*
+    project
+*/
+
+.team-box {
+    width: 60%;
+    margin: 4px auto;
+    border: solid 0.07px rgba(6,8,9)
+}
+
+.req-form-flex {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.req-form a {
+    text-decoration: none;
+}
+
+.req-form {
+    border: 0.05px solid grey;
+}
+
+.textPath a {
+    text-decoration: none;
+    color: black;
+}
+
+.reg-form:hover {
+    cursor: pointer;
+    transform: translate(10px 10px);
+}

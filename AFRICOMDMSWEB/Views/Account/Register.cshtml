@@ -1,0 +1,94 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel;
+
+@model RegisterVm;
+
+<div class="container border mt-4">
+	<form  asp-action="Register" asp-controller="Account" asp-route-returnurl="@ViewData["ReturnUrl"]" role="form">
+		<h4 class="text-center text-capatalize p-2">Create Account</h4>
+		<hr />
+		<div class="text-danger" asp-validation-summary="All"></div>
+	<div class="row">
+		<div class="mb-3 col-md-6">
+			<label asp-for="Name"></label>
+			<input class="form-control" asp-for="Name"/>
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3 col-md-6">
+			<label asp-for="UserName"></label>
+			<input class="form-control" asp-for="UserName"/>
+			<span asp-validation-for="UserName" class="text-danger"></span>
+		</div>
+		</div>
+
+			<div class="mb-3 col-md-6">
+				<label asp-for="phoneNumber"></label>
+				<input class="form-control" asp-for="phoneNumber" />
+				<span class="text-danger" asp-validation-for="phoneNumber"></span>
+			</div>
+
+			<div class="mb-3 col-md-6">
+				<label asp-for="Password"></label>
+				<div>
+					<input class="form-control" asp-for="Password" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+			</div>
+
+		<div class="mb-3 col-md-6">
+			<label asp-for="Email" ></label>
+			<div>
+				<input class="form-control" asp-for="Email" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+		</div>
+		
+		<div class="mb-3 col-md-6">
+			<label asp-for="ConfirmPassword" class="col-md-2"></label>
+			<div>
+				<input class="form-control" asp-for="ConfirmPassword" />
+				<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="mb-3 col-md-6">
+       <label asp-for="DepartmentID"></label>
+
+            <select asp-for="DepartmentID" asp-items="@Model.DepartmentList" class="form-control">
+                <option disabled selected>--Select Department--</option>
+            </select>
+        </div>
+    
+
+			<div class="mb-3 col-md-2 text-center">
+
+				<div>
+					<button type="submit" class="btn btn-success form-control">Register</button>
+				</div>
+			</div>
+	</form>
+</div>
+
+@section Scripts {
+    @{
+	<partial name= "_ValidationScriptsPartial" />
+    }
+
+	@*<script>
+		$(document).ready(function(){
+			$('#Role').change(function(){
+				var selection= $('#Role Option:Selected').text()
+				if(selection != 'CompanyUser'){
+					$('#CompanyId').hide()
+				}else{
+					$('#CompanyId').show()
+				}
+
+			})
+		
+		})
+	</script>*@
+}
+
+
+
+

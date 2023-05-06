@@ -1,0 +1,113 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model RequestViewModel
+
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+
+            <div>
+                @if (Model.Rquestrecieved.Count() > 0)
+                { 
+                    <h3 class="text-center mt-3">Requist sended to you</h3>
+                    <table class="table border table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Requst Title
+                                </th>
+                                <th>Recieved From</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model.Rquestrecieved)
+                            {
+                                count = count + 1;
+                                <tr>
+
+                                    <td>@count</td>
+                                    <td>
+                                        @item.Title
+                                    </td>
+                                    <td>
+                                        @item.Requester.Name
+                                    </td>
+                                    <td>
+                                        @item.RequestDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-action="Details" asp-controller="Request" asp-route-id="@item.RedId" >Details</a>
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+
+                    </table>
+                }
+            </div>
+
+            <div>
+                @if (Model.RecivedRequiestPass.Count() > 0)
+                { 
+                    <h3 class="text-center mt-3" >Requist pass to you</h3>
+                    <table class="table border table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Requst Title
+                                </th>
+
+                                <th>Recieved From</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model.RecivedRequiestPass)
+                            {
+                                count = count + 1;
+                                <tr>
+
+                                    <td>@count</td>
+                                    <td>
+                                      
+                                    </td>
+                                    <td>
+                                        @item.Requester.Name
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-action="Details" asp-controller="Request" asp-route-id="@item.RequestId">Details</a>
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+
+                    </table>
+                }
+            </div>
+            </div>
+         </div>
+    </div>
+
+
+    

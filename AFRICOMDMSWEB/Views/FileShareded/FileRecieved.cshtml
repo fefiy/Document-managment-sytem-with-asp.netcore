@@ -1,0 +1,129 @@
+﻿@model IEnumerable<FileShared>
+
+
+    <partial name="sidebbar" />
+    <div class="home-section">
+    <div class="contain">
+        <div class="cont">
+        <div class="mt-5">
+        <table class="table border table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        DocumentName
+                    </th>
+                    <th>
+                        RecievedFrom
+                    </th>
+                    <th>
+                        time
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int count = 0;
+                }
+                @foreach (var item in Model)
+                {
+
+                    count = count + 1;
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Document.DocumentContentName</td>
+                        <td>@item.Sender.Name</td>
+                        <td>@item.FileSentAt.ToShortDateString()</td>
+                        <td>
+                            <div class="text-center">
+                                <form asp-route-id="@item.DocumentId">
+                                    @if (item.Isdowloadble == 1)
+                                    {
+                                        <a asp-route-id="@item.DocumentId" class="btn btn-primary pl-1" asp-action="DownloadImage">Downloadfile</a>
+
+                                    }
+                                    @if (item.IsSharedable == 1)
+                                    {
+                                        <a class="btn btn-primary" asp-action="ShareProductShared" asp-route-id="@item.DocumentId"><i class="bi bi-share-fill"></i></a>
+                                    }
+                                    @if (item.IsUpdatable == 1)
+                                    {
+                                        <a class="btn btn-primary" asp-action="UpdateFileVersion" data-toggle="modal" asp-controller="Folder" asp-route-id="@item.DocumentId">Update</a>
+
+                                    }
+                                            <a target="_blank" class="btn btn-primary" href="https://localhost:44397/@item.Document.DocumentUrl">View file</a>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+    </div>
+ </div>
+
+
+
+@*<table class="table border table-striped">
+    <thead>
+        <tr>
+            <th>
+               #
+            </th>
+            <th>
+                DocumentName
+            </th>
+            <th>
+               RecievedFrom
+            </th>
+            <th>
+                time
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 0;
+        }
+        @foreach(var item in Model){
+
+            count = count + 1;
+            <tr>
+                <td>@count</td>
+                <td>@item.Document.DocumentContentName</td>
+                <td>@item.Sender.Name</td>
+                <td>@item.FileSentAt.ToShortDateString()</td>
+                <td>
+                        <div class="text-center">
+                            <form  asp-route-id="@item.DocumentId">
+                                @if(item.Isdowloadble==1){
+                                <a asp-route-id="@item.DocumentId" class="btn btn-primary pl-1" asp-action="DownloadImage">Downloadfile</a>
+
+                                }
+                                @if(item.IsSharedable== 1){
+                                <a class="btn btn-primary" asp-action="ShareProduct"  asp-route-id="@item.DocumentId"><i class="bi bi-share-fill"></i></a>
+                                }
+                                @if(item.IsUpdatable==1){
+                                <a class="btn btn-primary" asp-action="UpdateFileVersion" data-toggle="modal" asp-route-id="@item.DocumentId">Update</a>
+
+                                }
+                                <a target="_blank" class="btn btn-primary" href="@item.Document.DocumentUrl">View file</a>
+                            </form>
+                        </div>
+                    </td>
+            </tr>
+           
+        }
+       
+    </tbody>
+
+    </table>*@

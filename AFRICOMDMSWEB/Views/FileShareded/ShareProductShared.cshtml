@@ -1,0 +1,90 @@
+﻿@model AFRICOMDMSWEB.Models.ViewModel.SharedVm
+
+<partial name="sidebbar" />
+<div class="home-section">
+<div class="cont-Detail">
+	<div class="">
+
+	 <form asp-action="ShareProductShared" asp-controller="Product" role="form">
+		<div>
+			<h4 class=" text-capatalize p-2">Share the product</h4> 
+		</div>
+		
+		<hr />
+			<div class="row mx-2 my-4">
+				<div class="col-6">
+					<div class="text-danger" asp-validation-summary="All"></div>
+					<div class="form-group p-2">
+						<input type="radio" asp-for="sharedFiles.IspublicORPrivate" value="public" />
+							<label>Public</label>
+					</div>
+
+					<div class="form-group p-2">
+						<input type="radio" asp-for="sharedFiles.IspublicORPrivate" value="usergroup" />
+							<label>specific user group</label>
+					</div>
+
+					<input asp-for="produtId" hidden />
+					<div id="specificusergroup" style="display:none">
+						@foreach(var dep in Model.Depatment){
+							<div class="form-group" style="padding-left: 18px">
+								<input type="radio" id="dep" asp-for="DepartmetId" value="@dep.DepId" />
+								<label>@dep.Name</label>
+							</div>
+						}
+					</div>
+					<div class="form-group p-2">
+						<input type="radio" asp-for="sharedFiles.IspublicORPrivate" value="private" />
+							<label>privat</label>
+					</div>
+
+					<div class="mb-3 col-md-6">
+						<div>
+							<select class="form-control" id="private-only" style="display:none" asp-items="@Model.RecieverList" asp-for="sharedFiles.ReceiverId">
+								<option disabled selected> send to</option>
+							</select>
+							<span asp-validation-for="sharedFiles.ReceiverId" class="text-danger"></span>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+				<div>
+					<button type="submit" style= "width:80px" asp-route-id ="@Model.produtId" class="btn btn-success form-control">Send</button>
+				</div>
+	</form>
+  </div>
+</div>
+</div>
+
+@section Scripts{
+	<script>
+		
+		$(document).ready(function () {
+			$('input[type="radio"]').click(function () {
+
+				var selected = $("input[type='radio']:checked").val();
+
+				if (selected == "private") {
+					$("#dep").prop("checked", false)
+					$("#private-only").show()
+				}else{
+					$("#private-only").hide()
+				}
+
+				if (selected == "usergroup") {
+					$("#specificusergroup").show()
+				}else{
+					$("#dep").prop("checked", false )
+					$("#specificusergroup").hide()
+
+				}
+			})
+
+		})
+	</script>
+}
+
+
+
+

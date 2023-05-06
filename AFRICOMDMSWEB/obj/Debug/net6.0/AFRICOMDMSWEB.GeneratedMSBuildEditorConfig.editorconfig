@@ -1,0 +1,232 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AFRICOMDMSWEB
+build_property.RootNamespace = AFRICOMDMSWEB
+build_property.ProjectDir = C:\Users\hp\source\repos\AFRICOMDMSWEB\AFRICOMDMSWEB\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\hp\source\repos\AFRICOMDMSWEB\AFRICOMDMSWEB
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Account/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Account/NotInRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxOb3RJblJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Attendance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Attendance/Take.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVxUYWtlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Catagory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Catagory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/FileRecieved.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXEZpbGVSZWNpZXZlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/FileSended.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXEZpbGVTZW5kZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/ManageShared.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXE1hbmFnZVNoYXJlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/ShareProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXFNoYXJlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/FileShareded/ShareProductShared.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVNoYXJlZGVkXFNoYXJlUHJvZHVjdFNoYXJlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/ConfirmDeletion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXENvbmZpcm1EZWxldGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/CreateFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXENyZWF0ZUZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/CreateFolder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXENyZWF0ZUZvbGRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/DocHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXERvY0hpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/folderst.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXGZvbGRlcnN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/GetAllVersionDocument.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXEdldEFsbFZlcnNpb25Eb2N1bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/ShareProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXFNoYXJlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Folder/UpdateFileVersion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sZGVyXFVwZGF0ZUZpbGVWZXJzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/ManageUsers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/ManageUsers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/ManageUsers/ManageUserClaims.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlVXNlcnNcTWFuYWdlVXNlckNsYWltcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Project/CreateProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxDcmVhdGVQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Project/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/AddReqFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxBZGRSZXFGaWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/AddReqFileForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxBZGRSZXFGaWxlRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/CreateRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxDcmVhdGVSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/ReqProcess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxSZXFQcm9jZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/RequestActions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxSZXF1ZXN0QWN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/RequestAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxSZXF1ZXN0QW5zd2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/RequestRecieved.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxSZXF1ZXN0UmVjaWV2ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Request/TakeAction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxUYWtlQWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Roles/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Shared/sidebbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHNpZGViYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/UserInformation/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckluZm9ybWF0aW9uXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/UserInformation/PersonalDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckluZm9ybWF0aW9uXFBlcnNvbmFsRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/UserProfile/PersonalDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcUGVyc29uYWxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/source/repos/AFRICOMDMSWEB/AFRICOMDMSWEB/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-bzmere0j2m

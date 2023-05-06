@@ -1,0 +1,50 @@
+﻿@model AFRICOMDMSWEB.Models.ViewModel.SharedVm
+
+<partial name="sidebbar" />
+
+<div class="home-section">
+    <div class="contain">
+        <div class="cont-Detail">
+    <form method="post" asp-action="ManageShared" asp-controller="FileShareded" role="form">
+    <input  hidden />
+    <div class="card" style="width:70%; margin: 3rem auto">
+        <div class="card-header">
+            <h4 class="text-center">Manage Permission</h4>
+        </div>
+        <div class="card-body">
+              <div class="m-2 form-check">
+                  <input hidden asp-for="produtId"/>
+                <div>
+                    <div class="form-group p-2">
+                        <input type="checkbox" asp-for="IsSharedable" />
+                           <label>Can Share this File</label>
+                    </div>
+                    <div class="form-group p-2">
+                        <input type="checkbox" asp-for="Isdowloadble" />
+                           <label>Can Download this File</label>
+                    </div>
+                    <div class="form-group p-2">
+                        <input type="checkbox" asp-for="IsUpdatable" />
+                          <label>Can Update this File</label>
+                    </div>
+                </div>
+                    
+                </div>
+            
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="card-footer">
+           <button class="btn btn-primary" type="submit">save changes</button>
+        </div>
+    </div>
+</form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+                        

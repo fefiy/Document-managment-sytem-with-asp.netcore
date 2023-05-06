@@ -1,0 +1,41 @@
+﻿@model List<Category>
+@*<h1>This Is catagory</h1>
+@{
+
+}
+@foreach(var item in Model){
+	<h1>@item.Title</h1>
+	<ul>
+		@foreach(var chil in item.SubCategories){
+		<li>@chil.Title</li>
+	}
+	</ul>
+	
+}*@
+
+ @{ 
+  //  List<Category> categorylist = ViewBag.categoriesList as List<Category>;
+    void ShowTree(List<Category> categories)
+        {
+            if (categories != null)
+            {
+                foreach (var item in categories)
+                {
+                    <li>
+                        <span>@item.Title</span>
+                       
+                      
+                        @if (item.SubCategories.Any())
+                        {
+                            <ul>
+                                @{ ShowTree(item.SubCategories.ToList());}
+                            </ul>
+                        }
+                    </li>
+                }
+            }
+        }
+        ShowTree(Model);
+    }
+
+<a class="btn btn-primary" asp-action="Create" asp-controller="Catagory">Create Catagory</a>

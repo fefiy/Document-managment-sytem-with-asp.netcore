@@ -1,0 +1,41 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model RequestViewModel
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+            <div class="container">
+                @if (Model.SpecificRequestAnswers.Count() > 0)
+                {   <div class="Req-Ac">
+                    @foreach (var item in Model.SpecificRequestAnswers)
+                    {
+                        <div class="">
+                            <div>@item.MessageForRequester</div>
+                            <div class="text-end">
+                                <p>@item.ActionTaker.Name <span> @item.ActionTakeDate</span></p>
+                            </div>
+                        </div>
+                    }
+                    @if(Model.requestAnswerFiles.Count()> 0){
+                        foreach(var file in Model.requestAnswerFiles){
+                            <p>
+                                  <a asp-action="DownloadAns" asp-controller="Request" asp-route-id="@file.RequestAnsFileId" class="btn btn-primary">
+                                    <span> @file.RequestAnsFileName <i class="bi bi-arrow-down"></i></span>
+                                </a>
+                                <span> <a href="@file.RequestAnsFileUrl" target="_blank" class="btn btn-info">View</a> </span>
+                            </p>
+                        }
+                       
+                    }
+                    </div>
+                }
+                else
+                {
+                    <h2 class="text-center">Not Answerd Yet</h2>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model DocumentVersionViewModel
+
+<partial name="sidebbar" />
+
+<div class="home-section">
+	<div class="contain">
+		<div class="cont-Detail">
+			<div class="text-center">
+				<div class="row mx-3 p-2">
+					<div class="col-5">
+						<p>Created Date</p>
+						<p>@Model.Documents.CreatedAt.ToShortDateString()</p>
+					</div>
+					<div class="col-5">
+						<p>Tag</p>
+						<p>@Model.Documents.Tag</p>
+					</div>	
+				</div>
+				<div class="row mx-3 p-2">
+					<div class="col-5">
+						<p>Document Title</p>
+						<p>@Model.Documents.DocumentTitle</p>
+					</div>
+					<div class="col-5">
+						<p>Size</p>
+						<p>@Model.Documents.Size Kb</p>
+					</div>
+				</div>
+			</div>
+			<div class="mx-3 p-2">
+				<p>Description</p>
+				<p>@Model.Documents.Description</p>
+			</div>
+			<div class="flexx">		
+				@*<a class="btn btn-primary" asp-action="Edit" asp-controller="Folder">Edit</a>*@
+				<a class="btn btn-primary" asp-action="GetAllVersionDocument" asp-controller="Folder">see old Verrsions</a>
+			</div>
+		</div>
+	</div>
+</div>

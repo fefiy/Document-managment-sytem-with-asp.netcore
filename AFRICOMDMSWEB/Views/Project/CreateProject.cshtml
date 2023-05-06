@@ -1,0 +1,275 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model ProjectViewModel
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+            <div class="row">
+                <form asp-action="CreateProject">
+                    <div class="text-danger" asp-validation-summary="All"></div>
+                    <div >
+                        <div class="form-group p-2">
+                            <label asp-for="project.ProjectName"></label>
+                            <input class="form-control" asp-for="project.ProjectName" />
+                        </div>
+                        <div class="form-group  p-2">
+                            <label asp-for="project.ProjectDescription"></label>
+                            <textarea class="form-control" asp-for="project.ProjectDescription" rows="4"></textarea>
+                        </div>
+                      
+                         <div class="form-group p-2">
+                                    <label asp-for="project.StateId"></label>
+                                    <select asp-for="project.StateId" asp-items="@Model.ProjectState" class="form-control">
+                                        <option disabled selected>--Select A person to send--</option>
+                                    </select>
+                          </div>
+
+                        <div class="form-group p-2">
+                            <label asp-for="project.EndDate"></label>
+                            <input asp-for="project.EndDate" type="date"  class="form-control"/>
+                        </div>
+                        <div class="form-group p-2">
+                            <label asp-for="project.Clients"></label>
+                            <input asp-for="project.Clients" class="form-control" />
+                        </div>
+                        <div>
+                            <p>
+                                Create Team    <span class="px-5">
+                                    <input type="radio" asp-for="CreateTeam" value="later" />
+                                    <label>Later</label>
+                                </span>  <span class="px-5">
+                                    <input type="radio" asp-for="CreateTeam" value="now" />
+                                    <label>Now</label>
+                                </span>
+                            </p>
+                        </div>
+                      
+
+                        <div id="createTeam" class="team-box" style="display:none;">
+                            <h4 class="text-center p-2 my-2"> Create Team </h4>
+                            <div class="form-group p-2">
+                                <label asp-for="team.Name"></label>
+                                <input asp-for="team.Name" class="form-control" />
+                            </div>
+                            @*teamLeaders*@
+                           <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isLeaderSelected" onclick="checkme()" id="leaderCheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isLeaderSelected"><small>Assign team leader / project manager</small></label>
+                                </div>
+
+                                <div id="TeamLeader" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="teamLeaders.LeaderId"></label>
+                                        <select asp-for="teamLeaders.LeaderId" asp-items="@Model.projectLeaders" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           </div>
+                           @*solution enginers*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isSolutionEngAssined" onclick="checkSolEng()" id="solEngCheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isSolutionEngAssined"><small>Assign Solution Engineer</small></label>
+                                </div>
+
+                                <div id="SolEngTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="solutionEnginneerTeam.SolutionEnginneerId"></label>
+                                        <select asp-for="solutionEnginneerTeam.SolutionEnginneerId" asp-items="@Model.solutionEngineer" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @*bacendDevelopers*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isBackDevAssined" onclick="checkback()" id="backendCheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isBackDevAssined"><small>Assign Backend Developer</small></label>
+                                </div>
+
+                                <div id="BackendTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="backEndDeveloperTeam.BackEndDeveloperId"></label>
+                                        <select asp-for="backEndDeveloperTeam.BackEndDeveloperId" asp-items="@Model.BackEndDevelopers" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @*frontEndDevelopers*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isFrontEndAssined" onclick="checkFront()" id="frontendCheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isFrontEndAssined"><small>Assign FrontEnd Developer</small></label>
+                                </div>
+                                <div id="FrontEndTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="frontEndDeveloperTeam.FrontEndDeveloperId"></label>
+                                        <select asp-for="frontEndDeveloperTeam.FrontEndDeveloperId" asp-items="@Model.FrontEndDevelopers" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                           @*softwareArctecturres*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isSoftwareArcAssined" onclick="checksofArc()" id="ChecksofArc" type="checkbox" class="checkbox" />
+                                    <label asp-for="isSoftwareArcAssined"><small>Assign software Arctecturer</small></label>
+                                </div>
+
+                                <div id="SoftwareArcTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="softwareArctectureTeam.softwareArctectureId"></label>
+                                        <select asp-for="softwareArctectureTeam.softwareArctectureId" asp-items="@Model.sofwareArctecture" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @*testers*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isTesterAssined" onclick="checktest()" id="testerCheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isTesterAssined"><small>Assign Tester</small></label>
+                                </div>
+                                <div id="testerTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="testerTeam.TesterId"></label>
+                                        <select asp-for="testerTeam.TesterId" asp-items="@Model.testers" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           </div>
+                           @*Uidesigners*@
+                            <div class="teams">
+                                <div class="form-group p-2">
+                                    <input asp-for="isUIDesignerAssigned" onclick="checkUI()" id="UICheck" type="checkbox" class="checkbox" />
+                                    <label asp-for="isUIDesignerAssigned"><small>Assign UI Designer</small></label>
+                                </div>
+                                <div id="UIDesignTeam" style="display:none">
+                                    <div class="form-group p-2">
+                                        <label asp-for="UIDesignTeam.UIDesignId"></label>
+                                        <select asp-for="UIDesignTeam.UIDesignId" asp-items="@Model.UiDesigners" class="form-control">
+                                            <option disabled selected>--Select A person to send--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           </div>
+
+
+                            
+
+                        </div>
+                        
+                        <div class="form-group col-3 p-2">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ @section Scripts{
+	<script>
+        function checkme(){
+            var Leadercheck = document.getElementById("leaderCheck")
+            var tran = document.getElementById("TeamLeader")
+            if(Leadercheck.checked == true){
+                tran.style.display = "block"
+                console.log("hello")
+            }else{
+                tran.style.display = "none"
+            }
+        }
+        function checktest(){
+            var testerCheck = document.getElementById("testerCheck")
+            var testerTeam = document.getElementById("testerTeam")
+             if(testerCheck.checked== true){
+                testerTeam.style.display= "block"
+            }else{                
+                testerTeam.style.display= "none"
+            }
+        }
+        function checkback(){
+            var BackendTeam = document.getElementById("BackendTeam")
+            var backendCheck = document.getElementById("backendCheck")
+            if(backendCheck.checked){
+                BackendTeam.style.display = "block"
+            }else{
+                BackendTeam.style.display = "none"
+            }
+
+        }
+        function checksofArc(){
+            var ChecksofArc = document.getElementById("ChecksofArc")
+            var SoftwareArcTeam = document.getElementById("SoftwareArcTeam")
+            if(ChecksofArc.checked== true){
+                SoftwareArcTeam.style.display= "block"
+            }else{
+                SoftwareArcTeam.style.display = "none"
+            }
+        }
+
+        function checkFront(){
+            var FrontEndTeam = document.getElementById("FrontEndTeam")
+            var frontendCheck = document.getElementById("frontendCheck")
+            if(frontendCheck.checked){
+                FrontEndTeam.style.display = "block"
+            } else {
+                FrontEndTeam.style.display = "none"
+            }
+        }
+
+        function checkSolEng(){
+            var SolEngTeam = document.getElementById("SolEngTeam")
+            var solEngCheck = document.getElementById("solEngCheck")
+            if(solEngCheck.checked){
+                SolEngTeam.style.display = "block"
+            }else{
+                SolEngTeam.style.display = "none"
+            }
+        }
+
+        function checkUI(){
+            var UIDesignTeam = document.getElementById("UIDesignTeam")
+            var UICheck = document.getElementById("UICheck")
+            if(UICheck.checked){
+                UIDesignTeam.style.display = "block"
+            }else{
+                UIDesignTeam.style.display = "none"
+
+            }
+
+
+        }
+
+
+        $(document).ready(function () {
+            $('input[type="radio"]').click(function () {
+
+                var selected = $("input[type='radio']:checked").val();
+
+                if (selected == "now") {
+
+                    $("#createTeam").show()
+                } else {
+                    $("#createTeam").hide()
+                }
+            })
+
+        })
+
+        
+	</script>
+
+}

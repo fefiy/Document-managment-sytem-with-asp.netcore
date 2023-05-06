@@ -1,0 +1,45 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model AddReqFormViewModal
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+            @if(Model.RequiestForms.Count() > 0){
+                <h5 class="text-center my-3">Requiest Forms</h5>
+                <div class="req-form-flex">
+                @foreach(var item in Model.RequiestForms){
+                    <div>
+                            <a asp-action="Download"  asp-route-id="@item.Id" class="btn btn-outline-primary" >@item.Title <i class="bi bi-arrow-down"></i></a>
+                    </div>
+                }
+                </div>
+            }
+            <div class="row">
+                <form asp-action="CreateRequest" enctype="multipart/form-data" method="post">
+                    <div class="text-danger" asp-validation-summary="All"></div>
+                    <div class="row">
+                        <div class="form-group p-2">
+                            <label asp-for="Requests.Title"></label>
+                            <input class="form-control" asp-for="Requests.Title" />
+                        </div>
+                        <div class="form-group  p-2">
+                            <label asp-for="Requests.Description"></label>
+                            <textarea class="form-control" asp-for="Requests.Description" rows="4"></textarea>
+                        </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input class="form-control" name="FormFile" type="file" />
+                         <p>Attach Request File</p>
+                    </div>
+                </div>
+                        <div class="form-group col-3 p-2">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+﻿@using AFRICOMDMSWEB.Data
+@using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims
+<link href="~/css/sidebarStyle.css" />
+@inject SignInManager<IdentityUser> signInManager
+@inject UserManager<IdentityUser> userManager
+@inject AppDbContext _db;
+
+@if (signInManager.IsSignedIn(User))
+{
+    var userName = userManager.GetUserName(User);
+    var userLoinNow = _db.ApplicationUsers.FirstOrDefault(u => u.UserName == userName);
+    var userInRoles = _db.UserRoles.FirstOrDefault(u => u.UserId == userLoinNow.Id).RoleId;
+    var rolename = _db.Roles.FirstOrDefault(r => r.Id == userInRoles).Name;
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <img class="logo-image" src="~/Images/logo.png" alt="logo">
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a asp-action="Index" asp-controller="Folder">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">DMS</span>
+                </a>
+            </li>
+            <li>
+                <a asp-action="FileSended" asp-controller="FileShareded">
+                    <i class="bi bi-send-fill"></i>
+                    <span class="links_name">File Sended</span>
+                </a>
+            </li>
+            <li>
+                <a asp-action="FileRecieved" asp-controller="FileShareded">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">File Recieved</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-action="Index" asp-controller="Request">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">RMS</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-action="Index" asp-controller="Attendance">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">AMS</span>
+                </a>
+            </li>
+
+           @if (rolename == "Admin"){
+            
+                <li>
+                    <a asp-action="Index" asp-controller="ManageUsers">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        <span class="links_name">ManageUser</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a asp-action="Index" asp-controller="Roles">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        <span class="links_name">Role</span>
+                    </a>
+                </li>
+            }
+           
+        </ul>
+
+    </div>
+
+    <div class="nav-header">
+            <div class="nav-pro">
+            <a style ="text-decoration:none" class="nva-a" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <div class="d-flex align-items-center flex-row">
+                    <img class="proimgBox my-2 " id="imgpro" src="~/Images/istockphoto-526947869-612x612.jpg" alt="emppro" />
+                    <div class="mt-3 p-2">
+                        <span class="text-white">@userName</span>
+                        <p class="text-white px-2">@rolename</p>
+                    </div>
+                </div>
+            </a>
+                <div class="profile-popup" id="myProPopup">
+                    <ul class="profile-container">
+                        <a asp-action="PersonalDetail" asp-controller="UserInformation">Personal Detaill</a>
+                        <a asp-action="ChangePassword" asp-controller="UserInformation">Change pasword</a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="log- px-2">
+                <form class="fle-col" method="post" asp-controller="Account" asp-action="LogOff">
+                    <button class="btn btn-danger" type="submit"><i class="bi bi-box-arrow-right"></i></button>
+                </form>
+            </div>
+        
+    </div>
+}

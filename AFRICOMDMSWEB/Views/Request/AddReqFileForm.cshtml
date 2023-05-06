@@ -1,0 +1,29 @@
+﻿@model RequiestForm
+
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="cont-Detail">
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="col-md-5">
+            <form method="post" enctype="multipart/form-data" asp-action="AddReqFileForm">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input class="form-control" asp-for="Title" />
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <p>Upload file</p>
+                        <input class="form-control" name="FormFile" type="file" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input class="btn btn-success" type="submit" value="Add req File Form" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

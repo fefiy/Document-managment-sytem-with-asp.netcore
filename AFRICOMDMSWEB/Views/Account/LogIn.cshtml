@@ -1,0 +1,112 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel;
+@model LoginVm;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<IdentityUser> userManager;
+@inject SignInManager<IdentityUser> signInManager;
+
+@*<div class="body">
+    <div class="text">
+        <h1>About something </h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ullam pariatur dolores voluptatum cupiditate nemo blanditiis adipisci tenetur! Sit perspiciatis ad laudantium? Quo repudiandae itaque enim, harum, ad ullam repellat iusto ea nihil quod sed nesciunt. Necessitatibus iste laudantium vel.</p>
+    </div>
+    <form class="containerr" asp-action="LogIn" asp-controller="Account" asp-route-returnurl="@ViewData["ReturnURL"]" role="form" method="post">
+        <div class="formgroup">
+            <input class="formcontrol" asp-for="UserName" type="username" id="username" placeholder="UserName" autofocus>
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+        </div>
+        <div class="formgroup">
+            <input class="formcontrol" asp-for="Password" type="password"   placeholder="Pasword" autofocus>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="formgroup">
+            <input asp-for="RememberMe" type="checkbox" name="" id="remember-me">
+            <label >Remember me</label>
+        </div>
+        <button class="btn">Sign in</button>
+        <div class="link">
+            <div class="a">
+                <a href="">Forgot Your password?</a>
+            </div>
+            <div class="a "><a href="">Register as a new user</a></div>
+        </div>
+    </form>
+</div>*@@*background-radial-gradient*@
+
+    <div class=" backggrou overflow-hidden">
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            The best offer <br />
+            <span style="color: hsl(218, 81%, 75%)">for your business</span>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Temporibus, expedita iusto veniam atque, magni tempora mollitia
+            dolorum consequatur nulla, neque debitis eos reprehenderit quasi
+            ab ipsum nisi dolorem modi. Quos?
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+          <div class="card bg-white" style="border-radius: 1rem; width:80%">
+            <div class="card-body px-4 py-5 px-md-5"  >
+            <form asp-action="LogIn" asp-controller="Account" asp-route-returnurl="@ViewData["ReturnURL"]" role="form" method="post">
+
+             <!-- 2 column grid layout with text inputs for the first and last names -- -->
+                <!-- Email input -->
+                <div class="form-outline mb-2">
+                  <label class="form-label">UserName</label>
+
+                  <input  asp-for="UserName" class="form-control" />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-2">
+                  <label class="form-label" asp-for="Password">Password</label>
+                  <input type="password" asp-for="Password" class="form-control" />
+                  <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex  mb-2">
+                  <input class="form-check-input " type="checkbox" asp-for="RememberMe" />
+                  <label class="form-check-label px-2" asp-for="RememberMe">
+                    Remeber Me?
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="">
+                                    <p>
+                                        @*<a asp-action="ForgorPassword" asp-controller="Account">Forgot Your Password ?</a>*@
+                                    </p>
+                                    <p>
+                                        <a asp-action="Register" asp-controller="Account">register as a new user</a>
+                                    </p>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section: Design Block -->
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+	}
+

@@ -1,0 +1,28 @@
+﻿@using AFRICOMDMSWEB.Models.ViewModel
+@model  RequestViewModel
+
+<partial name="sidebbar" />
+<div class="home-section">
+    <div class="contain">
+        <div class="cont">
+           <div class="Details">
+               @foreach(var item in Model.RquestSsended){
+                   <div>
+                        <p>Title: @item.Title </p>
+                        <p>Date: @item.RequestDate</p>
+                        <p>Description: @item.Description</p>
+                        <p>Send To :@item.ActionTaker.Name </p>
+                       
+                   </div>
+               }
+                <p>
+                    <a asp-action="DownloadReq" asp-controller="Request" asp-route-id="@Model.RequestFiles.RequestFileId" class="btn btn-primary">
+                        <span>@Model.RequestFiles.RequestFileName <i class="bi bi-arrow-down"></i></span>
+                    </a>
+                    <span> <a href="@Model.RequestFiles.RequestFileUrl" target="_blank" class="btn btn-info">View</a> </span>
+                </p>
+                <a asp-action="RequestAnswers" asp-controller="Request" asp-route-id="@Model.Requests.RedId" class="btn btn-primary">View Answers</a>
+           </div>
+        </div>
+    </div>
+</div>
